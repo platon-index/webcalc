@@ -12,32 +12,26 @@
     <!-- BootstrapのJS読み込み -->
     <script src="bootstrap.min.js"></script>
   </head>
+  <style>
+      button{
+          width: 80px;
+          height: 80px;
+      }  
+  </style>
   <body>
-    <style>
-        button
-        {
-            width: 80px;
-            height: 80px;
-        }    
-    </style>
     <div class="container">
         <div class="table-responsive">
             <title>Calculator</title>
             <h2>Calculator</h2>
             <input style="font-size: 28px; text-align: right; width: 100%;"/><br />
             <script>
-                function update( _v )
-                {
+                function update( _v ){
                     document.querySelector( 'input' ).value = _v
                 }
-        
-                function append( _v)
-                {
+                function append( _v){
                     document.querySelector( 'input' ).value += _v
                 }
-        
-                function calc()
-                {
+                function calc(){
                     const v = document.querySelector( 'input' ).value
                     try {
                         const f = new Function( 'return ' + v )
@@ -45,44 +39,37 @@
                     }catch(_error){
                         update(_error)
                     }
-               
-                }
-                    
+                }      
             </script>
-        
             <div class="btn-group" role="group" aria-label="line1" style="width: 100%;">
-            <button type="button" class="btn btn-light" onclick= "update( '' )"><font size="5"><strong >C</strong></font></button>
-            <button type="button" class="btn btn-light" onclick= "append( '**' )"><font size="5"><strong>^</strong></font></button>
-            <button type="button" class="btn btn-light" onclick= "append( '**0.5' )"><font size="5"><strong>√</strong></font></button>
-            <button type="button" class="btn btn-warning" onclick= "append( '/' )"><font size="6"><strong>÷</strong></font></button><br />
+                <button type="button" class="btn btn-light btn-lg" onclick= "update( '' )">C</button>
+                <button type="button" class="btn btn-light btn-lg" onclick= "append( '**' )">^</button>
+                <button type="button" class="btn btn-light btn-lg" onclick= "append( '**0.5' )">√</button>
+                <button type="button" class="btn btn-warning btn-lg" onclick= "append( '/' )">÷</button><br />
             </div>
-
             <div class="btn-group" role="group" aria-label="line2" style="width: 100%;">
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '7' )"><font size="5">7</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '8' )"><font size="5">8</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '9' )"><font size="5">9</font></button>
-            <button type="button" class="btn btn-warning" onclick= "append( '*' )"><font size="6"><strong >×</strong></font></button><br />
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '7' )">7</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '8' )">8</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '9' )">9</button>
+                <button type="button" class="btn btn-warning btn-lg" onclick= "append( '*' )">×</button><br />
             </div>
-
             <div class="btn-group" role="group" aria-label="line3" style="width: 100%;"> 
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '4' )"><font size="5">4</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '5' )"><font size="5">5</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '6' )"><font size="5">6</font></button>
-            <button type="button" class="btn btn-warning" onclick= "append( '-' )"><font size="6"><strong >-</strong></font></button><br />
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '4' )">4</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '5' )">5</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '6' )">6</button>
+                <button type="button" class="btn btn-warning btn-lg" onclick= "append( '-' )">-</button><br />
             </div>
-
             <div class="btn-group" role="group" aria-label="line4" style="width: 100%;">
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '1' )"><font size="5">1</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '2' )"><font size="5">2</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '3' )"><font size="5">3</font></button>
-            <button type="button" class="btn btn-warning" onclick= "append( '+' )"><font size="6"><strong >+</strong></font></button><br />
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '1' )">1</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '2' )">2</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '3' )">3</button>
+                <button type="button" class="btn btn-warning btn-lg" onclick= "append( '+' )">+</button><br />
             </div>
-
             <div class="btn-group" role="group" aria-label="line5" style="width: 100%;">
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '0' )"><font size="5">0</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '00' )"><font size="5">00</font></button>
-            <button type="button" class="btn btn-outline-dark" onclick= "append( '.' )"><font size="5">.</font></button>
-            <button type="button" class="btn btn-warning" onclick= "calc()"><font size="6"><strong >=</strong></font></button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '0' )">0</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '00' )">00</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick= "append( '.' )">.</button>
+                <button type="button" class="btn btn-warning btn-lg" onclick= "calc()">=</button>
             </div>
   </body>
 </html>
